@@ -17,13 +17,22 @@ public class UnitScript : MonoBehaviour
     private int unitNumber;
     private int damageAmount;
     private int repairAmount;
-    //CityManager cityManager;
+
+    public int resourceIncrement;
+    public int ammoIncrement;
+
+    private int resourceCount;
+    private int ammoCount;
+
+    CityManager manager;
 
 	
 	void Start ()
     {
 		
 	}
+
+
 
     public void unitManager()
     {
@@ -39,14 +48,14 @@ public class UnitScript : MonoBehaviour
                 print("Ammo Generator");
                 unitNumber = 2;
                 unitHealth = 20;
-                //get ammo count from city manager and ++
+               
                 break;
             case 3:
                 print("Generic Building");
                 unitNumber = 1;
                 unitHealth = 10;
                 break;
-            //does nothing, only exists, like me
+           
 
             default:
                 print("Generic Building");
@@ -67,10 +76,12 @@ public class UnitScript : MonoBehaviour
         if (unitNumber == 2)
         {
             //get ammo count from city manager and increase it
+            manager.GetComponent<CityManager>().addammo(1);
         }
         if (unitNumber == 3)
         {
             //get resource count from city manager and increase it
+            manager.GetComponent<CityManager>().addresource(1);
         }
     }
     public void OnDamage()
@@ -82,8 +93,7 @@ public class UnitScript : MonoBehaviour
             {
                 //destroy
             }
-               
-               
+          
         }
         if (unitNumber == 2)
         {
@@ -113,11 +123,14 @@ public class UnitScript : MonoBehaviour
         if (unitNumber == 2)
         {
             //subtract resources from city manager
+            manager.GetComponent<CityManager>().useresource(1);
+            unitHealth += repairAmount;
             unitHealth += Mathf.Clamp(repairAmount, 0, 2);
         }
         if (unitNumber == 3)
         {
             //subtract resources from city manager
+            manager.GetComponent<CityManager>().useresource(1);
             unitHealth += repairAmount;
             unitHealth += Mathf.Clamp(repairAmount, 0, 3);
         }
