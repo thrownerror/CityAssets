@@ -1,0 +1,1054 @@
+fileFormatVersion: 2
+guid: 711a5583a19826b40bd99c5a9f926dc3
+timeCreated: 1523133358
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SmallWorld_0
+    21300002: SmallWorld_1
+    21300004: SmallWorld_2
+    21300006: SmallWorld_3
+    21300008: SmallWorld_4
+    21300010: SmallWorld_5
+    21300012: SmallWorld_6
+    21300014: SmallWorld_7
+    21300016: SmallWorld_8
+    21300018: SmallWorld_9
+    21300020: SmallWorld_10
+    21300022: SmallWorld_11
+    21300024: SmallWorld_12
+    21300026: SmallWorld_13
+    21300028: SmallWorld_14
+    21300030: SmallWorld_15
+    21300032: SmallWorld_16
+    21300034: SmallWorld_17
+    21300036: SmallWorld_18
+    21300038: SmallWorld_19
+    21300040: SmallWorld_20
+    21300042: SmallWorld_21
+    21300044: SmallWorld_22
+    21300046: SmallWorld_23
+    21300048: SmallWorld_24
+    21300050: SmallWorld_25
+    21300052: SmallWorld_26
+    21300054: SmallWorld_27
+    21300056: SmallWorld_28
+    21300058: SmallWorld_29
+    21300060: SmallWorld_30
+    21300062: SmallWorld_31
+    21300064: SmallWorld_32
+    21300066: SmallWorld_33
+    21300068: SmallWorld_34
+    21300070: SmallWorld_35
+    21300072: SmallWorld_36
+    21300074: SmallWorld_37
+    21300076: SmallWorld_38
+    21300078: SmallWorld_39
+    21300080: SmallWorld_40
+    21300082: SmallWorld_41
+    21300084: SmallWorld_42
+    21300086: SmallWorld_43
+    21300088: SmallWorld_44
+    21300090: SmallWorld_45
+    21300092: SmallWorld_46
+    21300094: SmallWorld_47
+    21300096: SmallWorld_48
+    21300098: SmallWorld_49
+    21300100: SmallWorld_50
+    21300102: SmallWorld_51
+    21300104: SmallWorld_52
+    21300106: SmallWorld_53
+    21300108: SmallWorld_54
+    21300110: SmallWorld_55
+    21300112: SmallWorld_56
+    21300114: SmallWorld_57
+    21300116: SmallWorld_58
+    21300118: SmallWorld_59
+    21300120: SmallWorld_60
+    21300122: SmallWorld_61
+    21300124: SmallWorld_62
+    21300126: SmallWorld_63
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SmallWorld_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 720
+        width: 3267
+        height: 2645
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_1
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 3094
+        width: 15
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_2
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 2899
+        width: 290
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_3
+      rect:
+        serializedVersion: 2
+        x: 4286
+        y: 2894
+        width: 306
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_4
+      rect:
+        serializedVersion: 2
+        x: 4630
+        y: 2930
+        width: 275
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_5
+      rect:
+        serializedVersion: 2
+        x: 4958
+        y: 2917
+        width: 173
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_6
+      rect:
+        serializedVersion: 2
+        x: 5156
+        y: 3188
+        width: 173
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_7
+      rect:
+        serializedVersion: 2
+        x: 5344
+        y: 3185
+        width: 172
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_8
+      rect:
+        serializedVersion: 2
+        x: 6063
+        y: 2613
+        width: 406
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_9
+      rect:
+        serializedVersion: 2
+        x: 5191
+        y: 2933
+        width: 116
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_10
+      rect:
+        serializedVersion: 2
+        x: 5348
+        y: 2938
+        width: 174
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_11
+      rect:
+        serializedVersion: 2
+        x: 5603
+        y: 2896
+        width: 191
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_12
+      rect:
+        serializedVersion: 2
+        x: 5829
+        y: 2886
+        width: 272
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_13
+      rect:
+        serializedVersion: 2
+        x: 6560
+        y: 2629
+        width: 565
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_14
+      rect:
+        serializedVersion: 2
+        x: 3983
+        y: 2656
+        width: 102
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_15
+      rect:
+        serializedVersion: 2
+        x: 4125
+        y: 2671
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_16
+      rect:
+        serializedVersion: 2
+        x: 4282
+        y: 2683
+        width: 78
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_17
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 2675
+        width: 106
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_18
+      rect:
+        serializedVersion: 2
+        x: 4537
+        y: 2672
+        width: 106
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_19
+      rect:
+        serializedVersion: 2
+        x: 4695
+        y: 2671
+        width: 102
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_20
+      rect:
+        serializedVersion: 2
+        x: 4844
+        y: 2668
+        width: 102
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_21
+      rect:
+        serializedVersion: 2
+        x: 5159
+        y: 2385
+        width: 114
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_22
+      rect:
+        serializedVersion: 2
+        x: 5379
+        y: 2657
+        width: 160
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_23
+      rect:
+        serializedVersion: 2
+        x: 3985
+        y: 2538
+        width: 53
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_24
+      rect:
+        serializedVersion: 2
+        x: 4189
+        y: 2499
+        width: 69
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_25
+      rect:
+        serializedVersion: 2
+        x: 5378
+        y: 2394
+        width: 158
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_26
+      rect:
+        serializedVersion: 2
+        x: 6088
+        y: 2206
+        width: 339
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_27
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 2451
+        width: 54
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_28
+      rect:
+        serializedVersion: 2
+        x: 4188
+        y: 2294
+        width: 47
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_29
+      rect:
+        serializedVersion: 2
+        x: 4382
+        y: 2389
+        width: 165
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_30
+      rect:
+        serializedVersion: 2
+        x: 4647
+        y: 2412
+        width: 91
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_31
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 2392
+        width: 94
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_32
+      rect:
+        serializedVersion: 2
+        x: 5683
+        y: 2237
+        width: 296
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_33
+      rect:
+        serializedVersion: 2
+        x: 6548
+        y: 2156
+        width: 346
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_34
+      rect:
+        serializedVersion: 2
+        x: 3984
+        y: 2369
+        width: 54
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_35
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 2084
+        width: 42
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_36
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1905
+        width: 322
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_37
+      rect:
+        serializedVersion: 2
+        x: 4457
+        y: 1851
+        width: 369
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_38
+      rect:
+        serializedVersion: 2
+        x: 4900
+        y: 1862
+        width: 367
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_39
+      rect:
+        serializedVersion: 2
+        x: 5341
+        y: 1862
+        width: 367
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_40
+      rect:
+        serializedVersion: 2
+        x: 5837
+        y: 1215
+        width: 695
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_41
+      rect:
+        serializedVersion: 2
+        x: 6611
+        y: 769
+        width: 687
+        height: 1410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_42
+      rect:
+        serializedVersion: 2
+        x: 6558
+        y: 1952
+        width: 278
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_43
+      rect:
+        serializedVersion: 2
+        x: 4016
+        y: 1392
+        width: 331
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_44
+      rect:
+        serializedVersion: 2
+        x: 4438
+        y: 1340
+        width: 348
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_45
+      rect:
+        serializedVersion: 2
+        x: 4861
+        y: 1286
+        width: 353
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_46
+      rect:
+        serializedVersion: 2
+        x: 5380
+        y: 1261
+        width: 314
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_47
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 1330
+        width: 595
+        height: 622
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_48
+      rect:
+        serializedVersion: 2
+        x: 3353
+        y: 1211
+        width: 11
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_49
+      rect:
+        serializedVersion: 2
+        x: 4441
+        y: 856
+        width: 326
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_50
+      rect:
+        serializedVersion: 2
+        x: 4876
+        y: 873
+        width: 324
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_51
+      rect:
+        serializedVersion: 2
+        x: 3997
+        y: 867
+        width: 324
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_52
+      rect:
+        serializedVersion: 2
+        x: 5381
+        y: 891
+        width: 251
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_53
+      rect:
+        serializedVersion: 2
+        x: 5887
+        y: 883
+        width: 287
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_54
+      rect:
+        serializedVersion: 2
+        x: 6302
+        y: 934
+        width: 141
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_55
+      rect:
+        serializedVersion: 2
+        x: 3727
+        y: 91
+        width: 955
+        height: 618
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_56
+      rect:
+        serializedVersion: 2
+        x: 5793
+        y: 507
+        width: 452
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_57
+      rect:
+        serializedVersion: 2
+        x: 5758
+        y: 142
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_58
+      rect:
+        serializedVersion: 2
+        x: 6020
+        y: 167
+        width: 235
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_59
+      rect:
+        serializedVersion: 2
+        x: 4941
+        y: 2377
+        width: 140
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_60
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 2658
+        width: 143
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_61
+      rect:
+        serializedVersion: 2
+        x: 5115
+        y: 2619
+        width: 195
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_62
+      rect:
+        serializedVersion: 2
+        x: 3663
+        y: 1888
+        width: 339
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SmallWorld_63
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 123
+        width: 976
+        height: 599
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
