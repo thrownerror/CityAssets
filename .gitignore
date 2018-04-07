@@ -23,3 +23,6 @@ sysinfo.txt
 cityAssetGame/Library/
 
 cityAssetGame/Temp/
+
+cityAssetGame/.vs/
+/cityAssetGame/.vs/cityAssetGame/v15/Server/sqlite3
