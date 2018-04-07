@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class citymanager : MonoBehaviour {
+public class CityManager : MonoBehaviour {
     [SerializeField]
     Text ammonum;
     [SerializeField]
@@ -12,10 +12,14 @@ public class citymanager : MonoBehaviour {
     Text goldnum;
     [SerializeField]
     Text rocknum;
+    [SerializeField]
+    Text resourcenum;
+  
     int ammo = 0;
     int wood = 0;
     int rock = 0;
     int gold = 0;
+    public int resource = 0;
     // Use this for initialization
     void Start () {
        
@@ -28,11 +32,17 @@ public class citymanager : MonoBehaviour {
         woodnum.text = ": " + wood;
         rocknum.text = ": " + rock;
         goldnum.text = ": " + gold;
+        resourcenum.text = ": " + resource;
 	}
 
     public void addammo(int a)
     {
         ammo += a;
+
+    }
+    public void addresource(int a)
+    {
+        resource += a;
 
     }
     public void addwood(int a)
@@ -85,11 +95,23 @@ public class citymanager : MonoBehaviour {
         return false;
 
     }
-   public bool usewood(int a)
+
+    public bool usewood(int a)
     {
         if (a <= wood && wood > 0)
         {
             wood -= a;
+
+            return true;
+        }
+        return false;
+
+    }
+    public bool useresource(int a)
+    {
+        if (a <= gold && gold > 0)
+        {
+            gold -= a;
 
             return true;
         }

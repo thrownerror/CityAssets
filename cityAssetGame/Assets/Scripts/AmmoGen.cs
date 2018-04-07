@@ -23,7 +23,7 @@ public class AmmoGen : MonoBehaviour {
         time += Time.deltaTime;
         if (time >= spd)
         {
-            citymanager.GetComponent<citymanager>().addammo(lvl);
+            citymanager.GetComponent<CityManager>().addammo(lvl);
             time = 0;
 
         }

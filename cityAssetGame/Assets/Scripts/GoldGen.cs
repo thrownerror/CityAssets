@@ -27,7 +27,7 @@ public class GoldGen : MonoBehaviour {
         time += Time.deltaTime;
         if (time >= spd)
         {
-            citymanager.GetComponent<citymanager>().addgold(lvl);
+            citymanager.GetComponent<CityManager>().addgold(lvl);
             time = 0;
 
         }

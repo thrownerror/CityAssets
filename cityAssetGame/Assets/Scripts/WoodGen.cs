@@ -27,7 +27,7 @@ public class WoodGen : MonoBehaviour {
         time += Time.deltaTime;
         if (time >= spd)
         {
-            citymanager.GetComponent<citymanager>().addwood(lvl);
+            citymanager.GetComponent<CityManager>().addwood(lvl);
             time = 0;
 
         }
