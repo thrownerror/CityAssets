@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GridScript : MonoBehaviour {
 
+    public bool HasOneGridSelected = false;
+    public string SelectedGrid;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +15,6 @@ public class GridScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+  
 }
