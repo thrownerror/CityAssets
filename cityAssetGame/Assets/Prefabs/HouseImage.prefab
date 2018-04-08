@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224263348359027580}
   - component: {fileID: 222627259551571106}
   - component: {fileID: 114411206206784768}
+  - component: {fileID: 114211688906939824}
   m_Layer: 5
   m_Name: HouseImage
   m_TagString: Untagged
@@ -28,6 +29,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114211688906939824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666657012145402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d17a3b85f45e66499d95d79252bfbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuType: 0
+  itemType: 1
 --- !u!114 &114411206206784768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +82,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666657012145402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.2, y: 55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

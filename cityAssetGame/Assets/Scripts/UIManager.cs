@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     public GameObject houseImage;
     public GameObject domeImage;
 
+    public GameObject genericHousePrefab;
+    public GameObject ammoPrefab;
+    public GameObject resourcePrefab;
+
     public List<GameObject> imageInstances;
     public bool isShowingMenu = false;
 
