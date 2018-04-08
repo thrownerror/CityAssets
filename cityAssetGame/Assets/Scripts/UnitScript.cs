@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitScript : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class UnitScript : MonoBehaviour
         //Ammo Generator is number 2 
         //Resource Generator is number 3
 
-    private int unitType;
+    public int unitType;
     private int unitHealth;
     private int unitNumber;
     private int damageAmount;
@@ -23,16 +24,37 @@ public class UnitScript : MonoBehaviour
 
     private int resourceCount;
     private int ammoCount;
-
-    CityManager manager;
+    GameObject manager;
+    [SerializeField]
+    Button donebutton;
+    bool add = false;
+    
 
 	
 	void Start ()
     {
-		
-	}
+        unitManager();
+        manager = GameObject.Find("CityManager");
+        
+    }
+
+    void Update() {
+        
+        if (donebutton.interactable == false && add == false)
+        {
+            OnTurn();
+        
+            add = true;
+
+        }
+        else if (donebutton.interactable == true)
+        {
+            add = false;
+        }
 
 
+
+    }
 
     public void unitManager()
     {
@@ -69,19 +91,22 @@ public class UnitScript : MonoBehaviour
 
     public void OnTurn()
     {
+        
         if (unitNumber == 1)
         {
+           
             //DO nothing
         }
         if (unitNumber == 2)
         {
+            
             //get ammo count from city manager and increase it
-            manager.GetComponent<CityManager>().addammo(1);
+            manager.GetComponent<citymanager>().addammo(ammoIncrement);
         }
         if (unitNumber == 3)
         {
             //get resource count from city manager and increase it
-            manager.GetComponent<CityManager>().addresource(1);
+            manager.GetComponent<citymanager>().addresource(resourceIncrement);
         }
     }
     public void OnDamage()
@@ -123,14 +148,14 @@ public class UnitScript : MonoBehaviour
         if (unitNumber == 2)
         {
             //subtract resources from city manager
-            manager.GetComponent<CityManager>().useresource(1);
+            manager.GetComponent<citymanager>().useresource(1);
             unitHealth += repairAmount;
             unitHealth += Mathf.Clamp(repairAmount, 0, 2);
         }
         if (unitNumber == 3)
         {
             //subtract resources from city manager
-            manager.GetComponent<CityManager>().useresource(1);
+            manager.GetComponent<citymanager>().useresource(1);
             unitHealth += repairAmount;
             unitHealth += Mathf.Clamp(repairAmount, 0, 3);
         }

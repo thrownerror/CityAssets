@@ -27,7 +27,7 @@ public class RockGen : MonoBehaviour {
         time += Time.deltaTime;
         if (time >= spd)
         {
-            citymanager.GetComponent<CityManager>().addrock(lvl);
+            citymanager.GetComponent<citymanager>().addrock(lvl);
             time = 0;
 
         }

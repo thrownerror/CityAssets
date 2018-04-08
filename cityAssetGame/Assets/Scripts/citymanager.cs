@@ -2,38 +2,383 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+public class citymanager : MonoBehaviour {
 
-public class CityManager : MonoBehaviour {
+    // Use this for initialization
     [SerializeField]
     Text ammonum;
     [SerializeField]
     Text woodnum;
     [SerializeField]
-    Text goldnum;
+    Text resourcenum;
     [SerializeField]
     Text rocknum;
     [SerializeField]
-    Text resourcenum;
-  
+    Button butt;
+    [SerializeField]
+    Text butttext;
+    Color color1;
+    Color color2;
+    [SerializeField]
+    bool playerturn =true;
+    [SerializeField]
+    Image redmiddle;
+    [SerializeField]
+    Image greyupper;
+    [SerializeField]
+    Image greylower;
+    [SerializeField]
+    Text roundtext;
+    float time=0;
+    float alph = 1;
+    bool l2r = false;
+    int roundcount = 1;
     int ammo = 0;
     int wood = 0;
     int rock = 0;
-    int gold = 0;
-    public int resource = 0;
+    int resource = 0;
+    bool meiwan = false;
+    bool addedresource;
     // Use this for initialization
-    void Start () {
-       
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        ammonum.text = ": "+ammo;
+    void Start()
+    {
+
+        color2.r = 0;
+        color2.g = 0;
+        color2.b = 0;
+        color1.r = 1;
+        color1.g = 1;
+        color1.b = 1;
+    }
+
+    // Update is called once per frame
+    void Update()
+    { 
+        ammonum.text = ": " + ammo;
         woodnum.text = ": " + wood;
         rocknum.text = ": " + rock;
-        goldnum.text = ": " + gold;
+
         resourcenum.text = ": " + resource;
-	}
+        if (playerturn==false)
+        {
+            if (alph > 0)
+            {
+                butt.interactable = false;
+                alph = alph - .02f;
+                butttext.color = color2;
+                ColorBlock cb = butt.colors;
+                cb.normalColor = color1;
+                cb.disabledColor = color1;
+                cb.highlightedColor = color1;
+                cb.pressedColor = color1;
+                butt.colors = cb;
+            }
+            if (l2r == false && meiwan == false)
+            {
+
+                redmiddle.fillOrigin = (int)Image.OriginHorizontal.Left;
+                greylower.fillOrigin = (int)Image.OriginHorizontal.Left;
+                greyupper.fillOrigin = (int)Image.OriginHorizontal.Left;
+                if (roundtext.gameObject.transform.localPosition.x < 0)
+                {
+
+                    roundtext.gameObject.transform.localPosition += new Vector3(9, 0, 0);
+
+                }
+                redmiddle.fillAmount += .02f;
+                greylower.fillAmount += .02f;
+                greyupper.fillAmount += .02f;
+                if (redmiddle.fillAmount >= 1)
+                {
+                    if (time < .1f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .2f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .3f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .4f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .5f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .6f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .7f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .8f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .9f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.0f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.1f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.2f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.3f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.4f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.5f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.6f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.7f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.8f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.9f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time <2.0f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    time += Time.deltaTime;
+                    if (time > 2)
+                    {
+                        roundtext.gameObject.SetActive(false);
+                        l2r = true;
+                    }
+                }
+
+            
+
+            }
+            if (l2r == true && meiwan == false)
+            {
+                
+                redmiddle.fillAmount -= .02f;
+                greylower.fillAmount -= .02f;
+                greyupper.fillAmount -= .02f;
+
+                redmiddle.fillOrigin =(int) Image.OriginHorizontal.Right;
+                greylower.fillOrigin = (int)Image.OriginHorizontal.Right;
+                greyupper.fillOrigin = (int)Image.OriginHorizontal.Right;
+                if (redmiddle.fillAmount == 0)
+                {
+                    meiwan = true;
+                }
+            }
+
+
+
+
+        }
+        else if (playerturn == true  ) {
+            
+            if (alph < 1)
+            {
+                butt.interactable = true;
+                alph = alph + .02f;
+                butttext.color = color2;
+                ColorBlock cb = butt.colors;
+                cb.normalColor = color1;
+                cb.disabledColor = color1;
+                cb.highlightedColor = color1;
+                cb.pressedColor = color1;
+                butt.colors = cb;
+
+            }
+
+
+            if (l2r == false && meiwan == false)
+            {
+                print("zheli");
+                redmiddle.fillOrigin = (int)Image.OriginHorizontal.Left;
+                greylower.fillOrigin = (int)Image.OriginHorizontal.Left;
+                greyupper.fillOrigin = (int)Image.OriginHorizontal.Left;
+                if (roundtext.gameObject.transform.localPosition.x < 0)
+                {
+
+                    roundtext.gameObject.transform.localPosition += new Vector3(9, 0, 0);
+
+                }
+                redmiddle.fillAmount += .02f;
+                greylower.fillAmount += .02f;
+                greyupper.fillAmount += .02f;
+                if (redmiddle.fillAmount >= 1)
+                {
+                    if (time < .1f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .2f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .3f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .4f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .5f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .6f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .7f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < .8f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < .9f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.0f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.1f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.2f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.3f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.4f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.5f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.6f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.7f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 1.8f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    else if (time < 1.9f)
+                    {
+                        roundtext.color = Color.black;
+                    }
+                    else if (time < 2.0f)
+                    {
+                        roundtext.color = Color.white;
+                    }
+                    time += Time.deltaTime;
+                    if (time > 2)
+                    {
+                        roundtext.gameObject.SetActive(false);
+                        l2r = true;
+                    }
+                }
+
+
+
+            }
+            if (l2r == true && meiwan == false)
+            {
+
+                redmiddle.fillAmount -= .02f;
+                greylower.fillAmount -= .02f;
+                greyupper.fillAmount -= .02f;
+
+                redmiddle.fillOrigin = (int)Image.OriginHorizontal.Right;
+                greylower.fillOrigin = (int)Image.OriginHorizontal.Right;
+                greyupper.fillOrigin = (int)Image.OriginHorizontal.Right;
+                if (redmiddle.fillAmount == 0)
+                {
+                    meiwan = true;
+                }
+            }
+
+
+
+        }
+        color1.a = alph;
+        color2.a = alph;
+    }
+
+
+    
+
+
+    public void changeturn(){
+        if (!playerturn)
+        {
+            roundcount++;
+            roundtext.gameObject.SetActive(true);
+            roundtext.text = "Round " + roundcount + ": Your Turn";
+            roundtext.transform.localPosition = new Vector3(-594, 8, 0);
+            playerturn = false;
+            l2r = false;
+            meiwan = false;
+            playerturn = true;
+            time = 0;
+           
+        }
+        else if (playerturn)
+        {
+            roundtext.gameObject.SetActive(true);
+            roundtext.text = "Round " + roundcount + ": Enemies Turn";
+            roundtext.transform.localPosition = new Vector3(-594,8,0);
+            playerturn = false;
+            l2r = false;
+            meiwan = false;
+            time = 0;
+        }
+
+    }
 
     public void addammo(int a)
     {
@@ -42,7 +387,8 @@ public class CityManager : MonoBehaviour {
     }
     public void addresource(int a)
     {
-        resource += a;
+            resource += a;
+        
 
     }
     public void addwood(int a)
@@ -55,11 +401,7 @@ public class CityManager : MonoBehaviour {
         rock += a;
 
     }
-    public void addgold(int a)
-    {
-        gold += a;
-
-    }
+ 
 
     public bool useammo(int a)
     {
@@ -84,11 +426,11 @@ public class CityManager : MonoBehaviour {
         return false;
 
     }
-    public bool usegold(int a)
+    public bool useresource(int a)
     {
-        if (a <= gold && gold > 0)
+        if (a <= resource && resource > 0)
         {
-            gold -= a;
+            resource -= a;
 
             return true;
         }
@@ -107,17 +449,5 @@ public class CityManager : MonoBehaviour {
         return false;
 
     }
-    public bool useresource(int a)
-    {
-        if (a <= gold && gold > 0)
-        {
-            gold -= a;
-
-            return true;
-        }
-        return false;
-
-    }
-
-
+ 
 }
