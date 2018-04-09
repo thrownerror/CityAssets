@@ -7,7 +7,8 @@ public enum MenuType
 {
     CREATE,
     UPGRADE,
-    ATTACK
+    ATTACK,
+    REPAIR
 };
 
 public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler

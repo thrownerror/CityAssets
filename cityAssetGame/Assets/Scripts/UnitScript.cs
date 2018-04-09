@@ -84,6 +84,7 @@ public class UnitScript : MonoBehaviour
             unitLevel = unitLevel + 1;
             ammoIncrement++;
             resourceIncrement++;
+            unitHealth += 10;
         }
 
         return true;
@@ -167,19 +168,19 @@ public class UnitScript : MonoBehaviour
 
     public void OnRepair()
     {
-        if (unitNumber == 1)
+        if (unitType == ItemType.GENERIC)
         {
             //subtract resources from city manager
             //cannot repair this guy
         }
-        if (unitNumber == 2)
+        if (unitType == ItemType.AMMO_GEN)
         {
             //subtract resources from city manager
             manager.GetComponent<citymanager>().useresource(1);
             unitHealth += repairAmount;
             unitHealth += Mathf.Clamp(repairAmount, 0, 2);
         }
-        if (unitNumber == 3)
+        if (unitType == ItemType.RESOURCE_GEN)
         {
             //subtract resources from city manager
             manager.GetComponent<citymanager>().useresource(1);

@@ -42,6 +42,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuType: 0
   itemType: 2
+  uiManager: {fileID: 0}
+  GenericCost: 1
+  AmmoGeneratorCost: 2
+  ResourceGeneratorCost: 2
 --- !u!114 &114624030816490678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61,7 +65,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300080, guid: 711a5583a19826b40bd99c5a9f926dc3, type: 3}
+  m_Sprite: {fileID: 21300100, guid: 711a5583a19826b40bd99c5a9f926dc3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

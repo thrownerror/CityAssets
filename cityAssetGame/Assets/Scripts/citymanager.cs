@@ -26,10 +26,14 @@ public class citymanager : MonoBehaviour
     Image redmiddle;
     [SerializeField]
     Image greyupper;
+
     [SerializeField]
     Image greylower;
+
     [SerializeField]
     Text roundtext;
+
+    public Text actionsLeftText;
 
     public int resource = 5;
     public GameObject cityGrid;
@@ -47,7 +51,7 @@ public class citymanager : MonoBehaviour
     int ammo = 0;
     int wood = 0;
     int rock = 0;
- 
+
     bool meiwan = false;
     bool addedresource;
     public int actionCount = 3;
@@ -67,6 +71,7 @@ public class citymanager : MonoBehaviour
         //GameObject battleGrid = GameObject.FindGameObjectWithTag("BattleGrid") as GameObject;
         battleGrid.SetActive(false);
         uiManager = GameObject.Find("ContextMenu").GetComponent<UIManager>();
+        actionsLeftText.text = actionCount.ToString();
     }
 
     public void AddUnit(string unitCell, UnitScript unit)
@@ -86,6 +91,7 @@ public class citymanager : MonoBehaviour
         {
             unit.Value.OnTurn();
         }
+        actionsLeftText.text = actionCount.ToString();
     }
 
     // Update is called once per frame
@@ -496,9 +502,9 @@ public class citymanager : MonoBehaviour
         if (actionCount != 0)
         {
             actionCount--;
+            actionsLeftText.text = actionCount.ToString();
             return true;
-        }
-
+        }       
         return false;
     }
 
