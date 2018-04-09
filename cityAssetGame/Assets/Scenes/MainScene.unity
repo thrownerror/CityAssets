@@ -533,7 +533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &364355745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -340, y: -1}
+  m_AnchoredPosition: {x: -182, y: -1}
   m_SizeDelta: {x: 63, y: 46}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &695236667
@@ -862,6 +862,7 @@ MonoBehaviour:
   greyupper: {fileID: 733042290}
   greylower: {fileID: 1118938429}
   roundtext: {fileID: 817221578}
+  resource: 5
   cityGrid: {fileID: 357302234}
   battleGrid: {fileID: 1752825507}
   actionCount: 3
@@ -1036,11 +1037,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 702396436}
     m_Modifications:
-    - target: {fileID: 114768807542800862, guid: d0e0f4f9042a98b45b059ca38d1235c3,
-        type: 2}
-      propertyPath: upgradeMenuItems.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224274039358318544, guid: d0e0f4f9042a98b45b059ca38d1235c3,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1131,18 +1127,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114768807542800862, guid: d0e0f4f9042a98b45b059ca38d1235c3,
-        type: 2}
-      propertyPath: upgradeMenuItems.Array.data[1]
-      value: 
-      objectReference: {fileID: 1304069533477032, guid: 9dd8ff7f85f009e4394ce65dc9355e38,
-        type: 2}
-    - target: {fileID: 114768807542800862, guid: d0e0f4f9042a98b45b059ca38d1235c3,
-        type: 2}
-      propertyPath: upgradeMenuItems.Array.data[0]
-      value: 
-      objectReference: {fileID: 1304069533477032, guid: 9dd8ff7f85f009e4394ce65dc9355e38,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0e0f4f9042a98b45b059ca38d1235c3, type: 2}
   m_IsPrefabParent: 0
@@ -1680,7 +1664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1281914722
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2684,7 +2668,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 788706791}
-        m_MethodName: onClick
+        m_MethodName: OnGridSwitch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

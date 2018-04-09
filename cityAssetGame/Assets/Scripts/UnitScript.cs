@@ -82,6 +82,8 @@ public class UnitScript : MonoBehaviour
         else
         {
             unitLevel = unitLevel + 1;
+            ammoIncrement++;
+            resourceIncrement++;
         }
 
         return true;

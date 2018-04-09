@@ -29,6 +29,12 @@ public class SelectableGrid : MonoBehaviour
         }
     }
 
+    public void DeHighlight()
+    {
+        var mat = GetComponentInChildren<Renderer>().material;
+        mat.color = Color.white;
+    }
+
     private void OnMouseOver()
     {
         var mat = GetComponentInChildren<Renderer>().material;
@@ -37,8 +43,7 @@ public class SelectableGrid : MonoBehaviour
 
     private void OnMouseExit()
     {
-        var mat = GetComponentInChildren<Renderer>().material;
-        mat.color = Color.white;
+        DeHighlight();
     }
 
     private void OnMouseDown()
@@ -55,13 +60,17 @@ public class SelectableGrid : MonoBehaviour
         }
         else
         {
-            IsSelected = false;
+            var cell = GameObject.Find(gridInstance.SelectedGrid).GetComponentInChildren<SelectableGrid>();
+            cell.IsSelected = false;
+            cell.DeHighlight();
+            gridInstance.HasOneGridSelected = true;
+            gridInstance.SelectedGrid = currentGrid;
         }
 
-        if(wasSelected)
-        {
-            gridInstance.HasOneGridSelected = false;
-        }
+        //if(wasSelected)
+        //{
+        //    gridInstance.HasOneGridSelected = false;
+        //}
 
     }
 }

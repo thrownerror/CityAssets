@@ -31,9 +31,11 @@ public class citymanager : MonoBehaviour
     [SerializeField]
     Text roundtext;
 
+    public int resource = 5;
     public GameObject cityGrid;
     public GameObject battleGrid;
 
+    private UIManager uiManager;
     public Dictionary<string, UnitScript> units = new Dictionary<string, UnitScript>();
 
 
@@ -45,11 +47,12 @@ public class citymanager : MonoBehaviour
     int ammo = 0;
     int wood = 0;
     int rock = 0;
-    int resource = 0;
+ 
     bool meiwan = false;
     bool addedresource;
     public int actionCount = 3;
-    public bool gridSwitch = false;
+
+    public bool gridSwitch = false; //True if current grid is of enemy
 
     // Use this for initialization
     void Start()
@@ -63,6 +66,7 @@ public class citymanager : MonoBehaviour
         //GameObject cityGrid = GameObject.FindGameObjectWithTag("CityGrid") as GameObject;
         //GameObject battleGrid = GameObject.FindGameObjectWithTag("BattleGrid") as GameObject;
         battleGrid.SetActive(false);
+        uiManager = GameObject.Find("ContextMenu").GetComponent<UIManager>();
     }
 
     public void AddUnit(string unitCell, UnitScript unit)
@@ -498,23 +502,23 @@ public class citymanager : MonoBehaviour
         return false;
     }
 
-    public void onClick()
+    public void OnGridSwitch()
     {
-        if (gridSwitch == true)
+        uiManager.CollapseMenu();
+        if (gridSwitch)
         {
             Debug.Log("switched to City Grid");
             gridSwitch = false;
             cityGrid.SetActive(true);
             battleGrid.SetActive(false);
         }
-        else if (gridSwitch == false)
+        else
         {
             Debug.Log("switched to Battle Grid");
             gridSwitch = true;
             battleGrid.SetActive(true);
             cityGrid.SetActive(false);
         }
-
     }
 
 

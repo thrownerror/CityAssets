@@ -28,13 +28,15 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     public List<GameObject> imageInstances;
     public bool isShowingMenu = false;
 
-    GridScript gridInstance;
+    private GridScript gridInstance;
+    private citymanager cityManager;
 
-    bool isOver;
+    bool isMouseOver;
 
     void Start()
     {
         gridInstance = GameObject.Find("Grid").GetComponent<GridScript>();
+        cityManager = GameObject.Find("CityManager").GetComponent<citymanager>();
     }
 
     void Update()
@@ -124,7 +126,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
         }
     }
 
-    void CollapseMenu()
+    public void CollapseMenu()
     {
         foreach (var item in imageInstances)
         {
@@ -143,6 +145,11 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
             type = MenuType.UPGRADE;
         }
 
+        if(cityManager.gridSwitch)
+        {
+            type = MenuType.ATTACK;
+        }
+
         isShowingMenu = !isShowingMenu;
         if (isShowingMenu && selectedCell != null)
         {
@@ -156,11 +163,11 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        isOver = true;
+        isMouseOver = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        isOver = false;
+        isMouseOver = false;
     }
 }

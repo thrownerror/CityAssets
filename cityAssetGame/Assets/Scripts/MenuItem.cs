@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 public enum ItemType
 {
     AMMO_GEN,
@@ -17,6 +18,10 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     public UIManager uiManager;
     private citymanager cityManager;
 
+    public int GenericCost = 1;
+    public int AmmoGeneratorCost = 2;
+    public int ResourceGeneratorCost = 2;
+
     void Start()
     {
         uiManager = transform.parent.GetComponentInChildren<UIManager>();
@@ -26,6 +31,11 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     void Update()
     {
 
+    }
+
+    void AttackEnemy()
+    {
+        Debug.Log("Attack");
     }
 
     GameObject GetSelectedGridItem()
@@ -83,25 +93,54 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         Debug.Log(spriteRenderer.gameObject.name);
     }
 
+    int GetItemTypeCost()
+    {
+        switch (itemType)
+        {
+            case ItemType.GENERIC:
+                return GenericCost;
+            case ItemType.RESOURCE_GEN:
+                return ResourceGeneratorCost;
+            case ItemType.AMMO_GEN:
+                return AmmoGeneratorCost;
+        }
+
+        return 0;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        var selectedGridItem = GetSelectedGridItem();
-        if (menuType == MenuType.CREATE)
+        if (menuType == MenuType.ATTACK)
         {
-            if (cityManager.IncrementTurn()) //If we have actions left in current turn.
+            if (cityManager.IncrementTurn())
             {
-                if (selectedGridItem != null)
+                AttackEnemy();
+            }
+            return; //No need to go further since Player Grid is disabled. 
+        }
+
+        var selectedGridItem = GetSelectedGridItem();
+        var unit = selectedGridItem.GetComponent<UnitScript>();
+        if (menuType == MenuType.CREATE && unit == null)
+        {
+            if (cityManager.resource >= GetItemTypeCost()) //If we have actions left in current turn.
+            {
+                if (selectedGridItem != null && cityManager.IncrementTurn())
                 {
                     switch (itemType)
                     {
                         case ItemType.GENERIC:
                             CreateGenericItem(selectedGridItem);
+                            cityManager.resource -= GenericCost;
                             break;
                         case ItemType.AMMO_GEN:
                             CreateAmmoItem(selectedGridItem);
+                            cityManager.resource -= AmmoGeneratorCost;
+
                             break;
                         case ItemType.RESOURCE_GEN:
                             CreateResourceItem(selectedGridItem);
+                            cityManager.resource -= ResourceGeneratorCost;
                             break;
                     }
                 }
@@ -109,9 +148,16 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         }
         else if (menuType == MenuType.UPGRADE)
         {
-            var unit = selectedGridItem.GetComponent<UnitScript>();
             Debug.Log("Upgrade " + unit.unitLevel);
+            if (unit.CanUpgrade())
+            {
+                if (cityManager.IncrementTurn())
+                {
+                    unit.UpgradeLevel();
+                }
+            }
         }
+
 
     }
 
