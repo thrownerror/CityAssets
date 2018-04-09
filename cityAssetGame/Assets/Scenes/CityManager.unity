@@ -503,7 +503,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1285401527359534, guid: ac1000e8dd748d34bbadad63699c39cf, type: 2}
       propertyPath: m_Name
-      value: City Grid
+      value: Grid
       objectReference: {fileID: 0}
     - target: {fileID: 1285401527359534, guid: ac1000e8dd748d34bbadad63699c39cf, type: 2}
       propertyPath: m_TagString
@@ -517,19 +517,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1285401527359534, guid: ac1000e8dd748d34bbadad63699c39cf,
     type: 2}
   m_PrefabInternal: {fileID: 357302233}
---- !u!114 &357302235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 357302234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88e3f8cb58d884f4ead7d6d903a2b55c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasOneGridSelected: 0
-  SelectedGrid: 
 --- !u!1 &364355744
 GameObject:
   m_ObjectHideFlags: 0

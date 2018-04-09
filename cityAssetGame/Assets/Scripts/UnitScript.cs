@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum UnitLevel
+{
+    Level1 = 1,
+    Level2,
+    Level3
+};
+
 public class UnitScript : MonoBehaviour
 {
-    //check building type
-    //get component from city management
-    // do whatever it is supposed to do
+    public ItemType unitType;
+    public UnitLevel unitLevel;
 
-        //Generic building is number 1 
-        //Ammo Generator is number 2 
-        //Resource Generator is number 3
+    public string currentCell;
 
-    public int unitType;
-    private int unitHealth;
+    public int unitHealth;
     private int unitNumber;
     private int damageAmount;
     private int repairAmount;
@@ -25,90 +28,112 @@ public class UnitScript : MonoBehaviour
     private int resourceCount;
     private int ammoCount;
     GameObject manager;
+
     [SerializeField]
     Button donebutton;
     bool add = false;
     
-
-	
 	void Start ()
     {
+        unitLevel = UnitLevel.Level1;
         unitManager();
         manager = GameObject.Find("CityManager");
         
     }
 
+    public void Init()
+    {
+        unitManager();
+    }
+
     void Update() {
         
-        if (donebutton.interactable == false && add == false)
-        {
-            OnTurn();
+        //if (donebutton.interactable == false && add == false)
+        //{
+        //    OnTurn();
         
-            add = true;
+        //    add = true;
 
-        }
-        else if (donebutton.interactable == true)
+        //}
+        //else if (donebutton.interactable == true)
+        //{
+        //    add = false;
+        //}
+    }
+
+    public bool CanUpgrade()
+    {
+        if (unitLevel == UnitLevel.Level3) return false;
+        else if (unitType == ItemType.GENERIC)
         {
-            add = false;
+            return false;
+        }
+        return true;
+    }
+
+    public bool UpgradeLevel()
+    {
+        if (unitLevel == UnitLevel.Level3) return false;
+
+        if (unitType == ItemType.GENERIC)
+        {
+            return false;
+        }
+        else
+        {
+            unitLevel = unitLevel + 1;
         }
 
-
-
+        return true;
     }
 
     public void unitManager()
     {
         switch (unitType)
         {
-            case 1:
+            case ItemType.RESOURCE_GEN:
                 print("Resource Generator");
                 unitNumber = 3;
                 unitHealth = 30;
-                
+                resourceIncrement = 1;
                 break;
-            case 2:
+
+            case ItemType.AMMO_GEN:
                 print("Ammo Generator");
                 unitNumber = 2;
                 unitHealth = 20;
-               
+                ammoIncrement = 1;               
                 break;
-            case 3:
+
+            case ItemType.GENERIC:
                 print("Generic Building");
                 unitNumber = 1;
                 unitHealth = 10;
                 break;
-           
 
             default:
                 print("Generic Building");
                 unitNumber = 1;
                 break;
-
         }
-
-
     }
 
     public void OnTurn()
     {
-        
-        if (unitNumber == 1)
+        switch(unitType)
         {
-           
-            //DO nothing
-        }
-        if (unitNumber == 2)
-        {
-            
-            //get ammo count from city manager and increase it
-            manager.GetComponent<citymanager>().addammo(ammoIncrement);
-        }
-        if (unitNumber == 3)
-        {
-            //get resource count from city manager and increase it
-            manager.GetComponent<citymanager>().addresource(resourceIncrement);
+            case ItemType.AMMO_GEN:
+                manager.GetComponent<citymanager>().addammo(ammoIncrement);
+                break;
+            case ItemType.RESOURCE_GEN:
+                manager.GetComponent<citymanager>().addresource(resourceIncrement);
+                break;
+            case ItemType.GENERIC:
+                //Do nothing
+                break;
         }
     }
+
     public void OnDamage()
     {
         if (unitNumber == 1)

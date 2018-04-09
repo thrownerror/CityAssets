@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class citymanager : MonoBehaviour {
+public class citymanager : MonoBehaviour
+{
 
     // Use this for initialization
     [SerializeField]
@@ -20,7 +21,7 @@ public class citymanager : MonoBehaviour {
     Color color1;
     Color color2;
     [SerializeField]
-    bool playerturn =true;
+    bool playerturn = true;
     [SerializeField]
     Image redmiddle;
     [SerializeField]
@@ -33,8 +34,10 @@ public class citymanager : MonoBehaviour {
     public GameObject cityGrid;
     public GameObject battleGrid;
 
+    public Dictionary<string, UnitScript> units = new Dictionary<string, UnitScript>();
 
-    float time=0;
+
+    float time = 0;
     float alph = 1;
     bool l2r = false;
     bool isActionPerformed = false;
@@ -47,43 +50,54 @@ public class citymanager : MonoBehaviour {
     bool addedresource;
     public int actionCount = 3;
     public bool gridSwitch = false;
-   
-
 
     // Use this for initialization
     void Start()
     {
-
         color2.r = 0;
         color2.g = 0;
         color2.b = 0;
         color1.r = 1;
         color1.g = 1;
         color1.b = 1;
-
         //GameObject cityGrid = GameObject.FindGameObjectWithTag("CityGrid") as GameObject;
         //GameObject battleGrid = GameObject.FindGameObjectWithTag("BattleGrid") as GameObject;
-
         battleGrid.SetActive(false);
-        
+    }
 
+    public void AddUnit(string unitCell, UnitScript unit)
+    {
+        units.Add(unitCell, unit);
+    }
 
+    public void RemoveUnit(string unitCell)
+    {
+        units.Remove(unitCell);
+    }
+
+    public void OnTurn()
+    {
+        actionCount = 3;
+        foreach (var unit in units)
+        {
+            unit.Value.OnTurn();
+        }
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         ammonum.text = ": " + ammo;
         woodnum.text = ": " + wood;
         rocknum.text = ": " + rock;
 
         resourcenum.text = ": " + resource;
-        if (playerturn==false)
+        if (playerturn == false)
         {
-            
+
             if (alph > 0)
             {
-             
+
                 butt.interactable = false;
                 alph = alph - .02f;
                 butttext.color = color2;
@@ -187,7 +201,7 @@ public class citymanager : MonoBehaviour {
                     {
                         roundtext.color = Color.black;
                     }
-                    else if (time <2.0f)
+                    else if (time < 2.0f)
                     {
                         roundtext.color = Color.white;
                     }
@@ -199,17 +213,17 @@ public class citymanager : MonoBehaviour {
                     }
                 }
 
-            
+
 
             }
             if (l2r == true && meiwan == false)
             {
-                
+
                 redmiddle.fillAmount -= .02f;
                 greylower.fillAmount -= .02f;
                 greyupper.fillAmount -= .02f;
 
-                redmiddle.fillOrigin =(int) Image.OriginHorizontal.Right;
+                redmiddle.fillOrigin = (int)Image.OriginHorizontal.Right;
                 greylower.fillOrigin = (int)Image.OriginHorizontal.Right;
                 greyupper.fillOrigin = (int)Image.OriginHorizontal.Right;
                 if (redmiddle.fillAmount == 0)
@@ -222,12 +236,12 @@ public class citymanager : MonoBehaviour {
 
 
         }
-        else if (playerturn == true  )
+        else if (playerturn == true)
         {
-           
+
             if (alph < 1)
             {
-               
+
                 butt.interactable = true;
                 alph = alph + .02f;
                 butttext.color = color2;
@@ -373,13 +387,13 @@ public class citymanager : MonoBehaviour {
     }
 
 
-    
 
 
-    public void changeturn(){
+
+    public void changeturn()
+    {
         if (!playerturn)
         {
-            
             roundcount++;
             roundtext.gameObject.SetActive(true);
             roundtext.text = "Round " + roundcount + ": Your Turn";
@@ -389,13 +403,13 @@ public class citymanager : MonoBehaviour {
             meiwan = false;
             playerturn = true;
             time = 0;
-           
+            OnTurn();
         }
         else if (playerturn)
         {
             roundtext.gameObject.SetActive(true);
             roundtext.text = "Round " + roundcount + ": Enemies Turn";
-            roundtext.transform.localPosition = new Vector3(-594,8,0);
+            roundtext.transform.localPosition = new Vector3(-594, 8, 0);
             playerturn = false;
             l2r = false;
             meiwan = false;
@@ -411,8 +425,8 @@ public class citymanager : MonoBehaviour {
     }
     public void addresource(int a)
     {
-            resource += a;
-        
+        resource += a;
+
 
     }
     public void addwood(int a)
@@ -425,7 +439,7 @@ public class citymanager : MonoBehaviour {
         rock += a;
 
     }
- 
+
 
     public bool useammo(int a)
     {
@@ -472,20 +486,16 @@ public class citymanager : MonoBehaviour {
         }
         return false;
 
-    }   
+    }
     public bool IncrementTurn()
     {
         if (actionCount != 0)
         {
             actionCount--;
-
+            return true;
         }
-        //else if (actionCount == 0)
-        //{
-        //    changeturn();
-        //}
-        return isActionPerformed;
 
+        return false;
     }
 
     public void onClick()
@@ -507,5 +517,5 @@ public class citymanager : MonoBehaviour {
 
     }
 
- 
+
 }

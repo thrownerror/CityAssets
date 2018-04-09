@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+public enum ItemType
+{
+    AMMO_GEN,
+    GENERIC,
+    RESOURCE_GEN
+};
 
 public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public enum ItemType
-    {
-        AMMO_GEN,
-        GENERIC,
-        RESOURCE_GEN
-    };
-
     public MenuType menuType;
     public ItemType itemType;
 
     public UIManager uiManager;
+    private citymanager cityManager;
 
     void Start()
     {
         uiManager = transform.parent.GetComponentInChildren<UIManager>();
+        cityManager = GameObject.Find("CityManager").GetComponent<citymanager>();
     }
 
     void Update()
@@ -43,19 +44,33 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     {
         var prefab = uiManager.genericHousePrefab.GetComponent<SpriteRenderer>();
         var unit = selectedGrid.gameObject.AddComponent<UnitScript>();
+        unit.currentCell = selectedGrid.name;
+        unit.unitType = ItemType.GENERIC;
+        unit.Init();
+        cityManager.AddUnit(unit.currentCell, unit);
         CreateItem(selectedGrid, prefab);
-       
+
     }
 
     void CreateAmmoItem(GameObject selectedGrid)
     {
         var prefab = uiManager.ammoPrefab.GetComponent<SpriteRenderer>();
+        var unit = selectedGrid.gameObject.AddComponent<UnitScript>();
+        unit.currentCell = selectedGrid.name;
+        unit.unitType = ItemType.AMMO_GEN;
+        cityManager.AddUnit(unit.currentCell, unit);
+        unit.Init();
         CreateItem(selectedGrid, prefab);
     }
 
     void CreateResourceItem(GameObject selectedGrid)
     {
         var prefab = uiManager.resourcePrefab.GetComponent<SpriteRenderer>();
+        var unit = selectedGrid.gameObject.AddComponent<UnitScript>();
+        unit.currentCell = selectedGrid.name;
+        cityManager.AddUnit(unit.currentCell, unit);
+        unit.unitType = ItemType.RESOURCE_GEN;
+        unit.Init();
         CreateItem(selectedGrid, prefab);
     }
 
@@ -71,22 +86,33 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     public void OnPointerClick(PointerEventData eventData)
     {
         var selectedGridItem = GetSelectedGridItem();
-        if (selectedGridItem != null)
+        if (menuType == MenuType.CREATE)
         {
-            //Debug.Log("Click " + selectedGridItem.name);
-            switch (itemType)
+            if (cityManager.IncrementTurn()) //If we have actions left in current turn.
             {
-                case ItemType.GENERIC:
-                    CreateGenericItem(selectedGridItem);
-                    break;
-                case ItemType.AMMO_GEN:
-                    CreateAmmoItem(selectedGridItem);
-                    break;
-                case ItemType.RESOURCE_GEN:
-                    CreateResourceItem(selectedGridItem);
-                    break;
+                if (selectedGridItem != null)
+                {
+                    switch (itemType)
+                    {
+                        case ItemType.GENERIC:
+                            CreateGenericItem(selectedGridItem);
+                            break;
+                        case ItemType.AMMO_GEN:
+                            CreateAmmoItem(selectedGridItem);
+                            break;
+                        case ItemType.RESOURCE_GEN:
+                            CreateResourceItem(selectedGridItem);
+                            break;
+                    }
+                }
             }
         }
+        else if (menuType == MenuType.UPGRADE)
+        {
+            var unit = selectedGridItem.GetComponent<UnitScript>();
+            Debug.Log("Upgrade " + unit.unitLevel);
+        }
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)

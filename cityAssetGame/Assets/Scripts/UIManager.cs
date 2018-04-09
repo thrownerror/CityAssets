@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     public List<GameObject> imageInstances;
     public bool isShowingMenu = false;
 
-    GridScript gridInstance;   
+    GridScript gridInstance;
 
     bool isOver;
 
@@ -40,6 +40,17 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     void Update()
     {
 
+    }
+
+    GameObject GetSelectedGridItem()
+    {
+        if (gridInstance.HasOneGridSelected)
+        {
+            var selected = gridInstance.SelectedGrid;
+            return GameObject.Find(selected);
+        }
+
+        return null;
     }
 
     void ShowCreationMenu()
@@ -97,9 +108,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     }
 
-    void ShowMenu()
+    void ShowMenu(MenuType menuType)
     {
-        MenuType menuType = MenuType.CREATE;
         switch (menuType)
         {
             case MenuType.CREATE:
@@ -125,11 +135,18 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Click");
-        isShowingMenu = !isShowingMenu;
-        if (isShowingMenu)
+        var selectedCell = GetSelectedGridItem();
+        var type = MenuType.CREATE;
+        var unit = selectedCell != null ? selectedCell.GetComponent<UnitScript>() : null;
+        if (selectedCell != null && unit != null)
         {
-            ShowMenu();
+            type = MenuType.UPGRADE;
+        }
+
+        isShowingMenu = !isShowingMenu;
+        if (isShowingMenu && selectedCell != null)
+        {
+            ShowMenu(type);
         }
         else
         {
@@ -139,13 +156,11 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Mouse enter");
         isOver = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Mouse exit");
         isOver = false;
     }
 }
