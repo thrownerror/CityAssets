@@ -29,9 +29,15 @@ public class citymanager : MonoBehaviour {
     Image greylower;
     [SerializeField]
     Text roundtext;
+
+    public GameObject cityGrid;
+    public GameObject battleGrid;
+
+
     float time=0;
     float alph = 1;
     bool l2r = false;
+    bool isActionPerformed = false;
     int roundcount = 1;
     int ammo = 0;
     int wood = 0;
@@ -39,6 +45,11 @@ public class citymanager : MonoBehaviour {
     int resource = 0;
     bool meiwan = false;
     bool addedresource;
+    public int actionCount = 3;
+    public bool gridSwitch = false;
+   
+
+
     // Use this for initialization
     void Start()
     {
@@ -49,6 +60,14 @@ public class citymanager : MonoBehaviour {
         color1.r = 1;
         color1.g = 1;
         color1.b = 1;
+
+        //GameObject cityGrid = GameObject.FindGameObjectWithTag("CityGrid") as GameObject;
+        //GameObject battleGrid = GameObject.FindGameObjectWithTag("BattleGrid") as GameObject;
+
+        battleGrid.SetActive(false);
+        
+
+
     }
 
     // Update is called once per frame
@@ -61,8 +80,10 @@ public class citymanager : MonoBehaviour {
         resourcenum.text = ": " + resource;
         if (playerturn==false)
         {
+            
             if (alph > 0)
             {
+             
                 butt.interactable = false;
                 alph = alph - .02f;
                 butttext.color = color2;
@@ -201,10 +222,12 @@ public class citymanager : MonoBehaviour {
 
 
         }
-        else if (playerturn == true  ) {
-            
+        else if (playerturn == true  )
+        {
+           
             if (alph < 1)
             {
+               
                 butt.interactable = true;
                 alph = alph + .02f;
                 butttext.color = color2;
@@ -220,7 +243,7 @@ public class citymanager : MonoBehaviour {
 
             if (l2r == false && meiwan == false)
             {
-                print("zheli");
+                //print("zheli");
                 redmiddle.fillOrigin = (int)Image.OriginHorizontal.Left;
                 greylower.fillOrigin = (int)Image.OriginHorizontal.Left;
                 greyupper.fillOrigin = (int)Image.OriginHorizontal.Left;
@@ -356,6 +379,7 @@ public class citymanager : MonoBehaviour {
     public void changeturn(){
         if (!playerturn)
         {
+            
             roundcount++;
             roundtext.gameObject.SetActive(true);
             roundtext.text = "Round " + roundcount + ": Your Turn";
@@ -448,6 +472,40 @@ public class citymanager : MonoBehaviour {
         }
         return false;
 
+    }   
+    public bool IncrementTurn()
+    {
+        if (actionCount != 0)
+        {
+            actionCount--;
+
+        }
+        //else if (actionCount == 0)
+        //{
+        //    changeturn();
+        //}
+        return isActionPerformed;
+
     }
+
+    public void onClick()
+    {
+        if (gridSwitch == true)
+        {
+            Debug.Log("switched to City Grid");
+            gridSwitch = false;
+            cityGrid.SetActive(true);
+            battleGrid.SetActive(false);
+        }
+        else if (gridSwitch == false)
+        {
+            Debug.Log("switched to Battle Grid");
+            gridSwitch = true;
+            battleGrid.SetActive(true);
+            cityGrid.SetActive(false);
+        }
+
+    }
+
  
 }
