@@ -5,13 +5,6 @@ using UnityEngine.EventSystems;
 
 public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public enum MenuType
-    {
-        CREATE,
-        UPGRADE,
-        ATTACK
-    };
-
     public enum ItemType
     {
         AMMO_GEN,
@@ -49,26 +42,23 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     void CreateGenericItem(GameObject selectedGrid)
     {
         var prefab = uiManager.genericHousePrefab.GetComponent<SpriteRenderer>();
-        var spriteRenderer = selectedGrid.GetComponentInChildren<SpriteRenderer>();
-        spriteRenderer.sprite = prefab.sprite;
-        spriteRenderer.gameObject.transform.localPosition = new Vector3(0, -0, -0.55F);
-        spriteRenderer.gameObject.transform.localScale = new Vector3(0.25F, 0.25F, 0.25F);
-        Debug.Log(spriteRenderer.gameObject.name);
+        CreateItem(selectedGrid, prefab);
     }
 
     void CreateAmmoItem(GameObject selectedGrid)
     {
         var prefab = uiManager.ammoPrefab.GetComponent<SpriteRenderer>();
-        var spriteRenderer = selectedGrid.GetComponentInChildren<SpriteRenderer>();
-        spriteRenderer.sprite = prefab.sprite;
-        spriteRenderer.gameObject.transform.localPosition = new Vector3(0, 0, -0.55F);
-        spriteRenderer.gameObject.transform.localScale = new Vector3(0.25F, 0.25F, 0.25F);
-        Debug.Log(spriteRenderer.gameObject.name);
+        CreateItem(selectedGrid, prefab);
     }
 
     void CreateResourceItem(GameObject selectedGrid)
     {
         var prefab = uiManager.resourcePrefab.GetComponent<SpriteRenderer>();
+        CreateItem(selectedGrid, prefab);
+    }
+
+    void CreateItem(GameObject selectedGrid, SpriteRenderer prefab)
+    {
         var spriteRenderer = selectedGrid.GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.sprite = prefab.sprite;
         spriteRenderer.gameObject.transform.localPosition = new Vector3(0, 0, -0.55F);
