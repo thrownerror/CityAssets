@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour {
 
     public Button creditsButton;
+    public Button quitButton;
     public GameObject screen;
 
     // Use this for initialization
     void Start () {
 
 
-        Button btn = creditsButton.GetComponent<Button>();
+        Button cbtn = creditsButton.GetComponent<Button>();
+        Button qbtn = quitButton.GetComponent<Button>();
         screen.SetActive(false);
-        btn.onClick.AddListener(OpenCredits);
+        cbtn.onClick.AddListener(OpenCredits);
+        qbtn.onClick.AddListener(Quit);
 
     }
 
@@ -31,5 +34,10 @@ public class MenuScript : MonoBehaviour {
     void OpenCredits()
     {
         screen.SetActive(true);
+    }
+
+    void Quit()
+    {
+        Application.Quit();
     }
 }
