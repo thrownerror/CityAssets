@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: -0.001503}
-  m_SizeDelta: {x: 1120, y: 418}
+  m_AnchoredPosition: {x: -0.000024796, y: -0.0010824}
+  m_SizeDelta: {x: 800, y: 298.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167483668
 MonoBehaviour:
@@ -278,8 +278,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.1}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.00000041351, y: 4.7}
+  m_SizeDelta: {x: 198.9, y: 50.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965336387
 MonoBehaviour:
@@ -406,8 +406,8 @@ Camera:
   m_GameObject: {fileID: 1008329974}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.17084773, g: 0.3303056, b: 0.5808823, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -481,8 +481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -41.42}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.000024795998, y: -58.6}
+  m_SizeDelta: {x: 198.9, y: 47.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057061581
 MonoBehaviour:
@@ -590,8 +590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000002861}
+  m_SizeDelta: {x: 0, y: 0.0000076294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209802117
 MonoBehaviour:
@@ -614,10 +614,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -756,10 +756,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -832,10 +832,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -884,8 +884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 42.94}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.93745995, y: 73.215805}
+  m_SizeDelta: {x: 197.07, y: 47.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980476952
 MonoBehaviour:
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1085,9 +1085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6cda6009af2e64e9464ccde455cdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playButton: {fileID: 1980476952}
   creditsButton: {fileID: 965336387}
   quitButton: {fileID: 1057061581}
-  screen: {fileID: 167483666}
+  creditsScreen: {fileID: 167483666}
 --- !u!4 &2052281639
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,8 +1134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00091553, y: -0.000030518}
-  m_SizeDelta: {x: 1120, y: 418}
+  m_AnchoredPosition: {x: 28.2, y: -4.9}
+  m_SizeDelta: {x: 743.6, y: 288.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115965190
 MonoBehaviour:
@@ -1157,10 +1158,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1168,9 +1169,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tCredits\n\n\tArtwork\n\t\t-\n\tSounds\n\t\t-\n\t\n\tDesign
-    & Programming\n\t\t- Nithish\n\t\t- Anushka\n\t\t- Robert\n\t\t- Ron\n\t\t- Kunal\n\t\t-
-    Rahul"
+  m_Text: "\n\tDESIGN & PROGRAMMING\t\t\t\t\t\t\t\tART\t\t\t\t\t\t\t\t\t      \t         SOUND\n\t\t\t
+    \n\t\t\t Nithish\t\t\t\t\t\t\t\t\t\tSmall World art by Daniel Cook\t        \t\tAll
+    sounds from                        \n        \t Anushka                        \t\t\t\t(Lostgarden.com)
+    \t\t\t\t\t\t\t\t\t www.freesound.org \n\t\t\t Robert\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+    \ \t\t\t\t  mounts,Kim Drums by KatHakaku\n\t\t\t Ron\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+    \                           \t\t\t\t\t   mounts by levelclearer\r\t \t\t\t\n\t\t\t
+    Kunal\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        \t \t\t\t  toaster oven ding
+    by sethlind\n\t\t\t Rahul\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t  \t\t\t\t\tgun_shoot
+    by Michel Hollicardo\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                  \t\t\t\t\tgun
+    load by Shelby_Wilderman\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                         \t\t\t\t
+    \  AHHHH by random_intrude  \t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+    \t\t\t\t  Hammering Nails, Close by InspectorJ\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tExplosion
+    Test by Apenguin73\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t
+    \  Explosion 3 by harpoyume\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tLanding
+    Bomb by djfroyd\r\n\tPress Esc to go back to Menu"
 --- !u!222 &2115965191
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -2,20 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class MenuScript : MonoBehaviour {
 
+    public Button playButton;
     public Button creditsButton;
     public Button quitButton;
-    public GameObject screen;
+    public GameObject creditsScreen;
 
     // Use this for initialization
     void Start () {
 
-
+        Button pbtn = playButton.GetComponent<Button>();
         Button cbtn = creditsButton.GetComponent<Button>();
         Button qbtn = quitButton.GetComponent<Button>();
-        screen.SetActive(false);
+
+        creditsScreen.SetActive(false);
+
+        pbtn.onClick.AddListener(PlayGame);
         cbtn.onClick.AddListener(OpenCredits);
         qbtn.onClick.AddListener(Quit);
 
@@ -26,18 +32,24 @@ public class MenuScript : MonoBehaviour {
 
         if (Input.GetKeyDown("escape"))
         {
-            screen.SetActive(false);
+            creditsScreen.SetActive(false);
         }
 
 	}
 
     void OpenCredits()
     {
-        screen.SetActive(true);
+        creditsScreen.SetActive(true);
     }
 
     void Quit()
     {
+        Debug.Break();
         Application.Quit();
+    }
+
+    void PlayGame()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
