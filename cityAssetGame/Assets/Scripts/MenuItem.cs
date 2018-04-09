@@ -42,7 +42,9 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     void CreateGenericItem(GameObject selectedGrid)
     {
         var prefab = uiManager.genericHousePrefab.GetComponent<SpriteRenderer>();
+        var unit = selectedGrid.gameObject.AddComponent<UnitScript>();
         CreateItem(selectedGrid, prefab);
+       
     }
 
     void CreateAmmoItem(GameObject selectedGrid)
