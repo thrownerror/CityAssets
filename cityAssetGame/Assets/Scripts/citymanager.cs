@@ -29,6 +29,11 @@ public class citymanager : MonoBehaviour {
     Image greylower;
     [SerializeField]
     Text roundtext;
+
+    public GameObject cityGrid;
+    public GameObject battleGrid;
+
+
     float time=0;
     float alph = 1;
     bool l2r = false;
@@ -41,6 +46,9 @@ public class citymanager : MonoBehaviour {
     bool meiwan = false;
     bool addedresource;
     public int actionCount = 3;
+    public bool gridSwitch = false;
+   
+
 
     // Use this for initialization
     void Start()
@@ -52,6 +60,14 @@ public class citymanager : MonoBehaviour {
         color1.r = 1;
         color1.g = 1;
         color1.b = 1;
+
+        //GameObject cityGrid = GameObject.FindGameObjectWithTag("CityGrid") as GameObject;
+        //GameObject battleGrid = GameObject.FindGameObjectWithTag("BattleGrid") as GameObject;
+
+        battleGrid.SetActive(false);
+        
+
+
     }
 
     // Update is called once per frame
@@ -227,7 +243,7 @@ public class citymanager : MonoBehaviour {
 
             if (l2r == false && meiwan == false)
             {
-                print("zheli");
+                //print("zheli");
                 redmiddle.fillOrigin = (int)Image.OriginHorizontal.Left;
                 greylower.fillOrigin = (int)Image.OriginHorizontal.Left;
                 greyupper.fillOrigin = (int)Image.OriginHorizontal.Left;
@@ -471,5 +487,25 @@ public class citymanager : MonoBehaviour {
         return isActionPerformed;
 
     }
+
+    public void onClick()
+    {
+        if (gridSwitch == true)
+        {
+            Debug.Log("switched to City Grid");
+            gridSwitch = false;
+            cityGrid.SetActive(true);
+            battleGrid.SetActive(false);
+        }
+        else if (gridSwitch == false)
+        {
+            Debug.Log("switched to Battle Grid");
+            gridSwitch = true;
+            battleGrid.SetActive(true);
+            cityGrid.SetActive(false);
+        }
+
+    }
+
  
 }
