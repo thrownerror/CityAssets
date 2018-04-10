@@ -27,7 +27,7 @@ public class UnitScript : MonoBehaviour
 
     private int resourceCount;
     private int ammoCount;
-    GameObject manager;
+    citymanager manager;
 
     [SerializeField]
     Button donebutton;
@@ -37,7 +37,8 @@ public class UnitScript : MonoBehaviour
     {
         unitLevel = UnitLevel.Level1;
         unitManager();
-        manager = GameObject.Find("CityManager");
+        manager = GameObject.Find("CityManager").GetComponent<citymanager>();
+        damageAmount = 30;
         
     }
 
@@ -84,7 +85,7 @@ public class UnitScript : MonoBehaviour
             unitLevel = unitLevel + 1;
             ammoIncrement++;
             resourceIncrement++;
-            unitHealth += 10;
+            unitHealth += 15;
         }
 
         return true;
@@ -139,31 +140,33 @@ public class UnitScript : MonoBehaviour
 
     public void OnDamage()
     {
-        if (unitNumber == 1)
+        unitHealth -= damageAmount;
+        if (unitHealth <= 0)
         {
-            unitHealth -= damageAmount;
-            if (unitHealth <= 0)
-            {
-                //destroy
-            }
+            manager.RemoveUnit(currentCell);
+            Destroy(gameObject);
+        }
+        //if (unitType == 1)
+        //{
+           
           
-        }
-        if (unitNumber == 2)
-        {
-            unitHealth -= damageAmount;
-            if (unitHealth <= 0)
-            {
-                //destroy
-            }
-        }
-        if (unitNumber == 3)
-        {
-            unitHealth -= damageAmount;
-            if (unitHealth <= 0)
-            {
-                //destroy
-            }
-        }
+        //}
+        //if (unitNumber == 2)
+        //{
+        //    unitHealth -= damageAmount;
+        //    if (unitHealth <= 0)
+        //    {
+        //        //destroy
+        //    }
+        //}
+        //if (unitNumber == 3)
+        //{
+        //    unitHealth -= damageAmount;
+        //    if (unitHealth <= 0)
+        //    {
+        //        //destroy
+        //    }
+        //}
     }
 
     public void OnRepair()

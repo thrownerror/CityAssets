@@ -11,7 +11,7 @@ public class SelectableGrid : MonoBehaviour
     void Start()
     {
         currentGrid = transform.parent.name;
-        gridInstance = GameObject.Find("Grid").GetComponent<GridScript>();
+        gridInstance = transform.parent.parent.GetComponent<GridScript>();
     }
 
     // Update is called once per frame

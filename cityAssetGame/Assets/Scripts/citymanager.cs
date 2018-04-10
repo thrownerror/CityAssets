@@ -51,7 +51,7 @@ public class citymanager : MonoBehaviour
     bool l2r = false;
     bool isActionPerformed = false;
     int roundcount = 1;
-    int ammo = 0;
+    public int ammo = 0;
     int wood = 0;
     int rock = 0;
 
@@ -445,7 +445,9 @@ public class citymanager : MonoBehaviour
             //get where enemy is shooting
             string targetedPlace = enemy.GetComponent<EnemyScript>().ShootPlayer();
             //I believe this damages a set location if there is a unit there
-            if(units[targetedPlace].GetComponent<UnitScript>() != null)
+            var mat = GameObject.Find(targetedPlace).GetComponentInChildren<Renderer>().material;
+            mat.color = Color.red;
+            if(units.ContainsKey(targetedPlace))
             {
                 units[targetedPlace].GetComponent<UnitScript>().OnDamage();
             }

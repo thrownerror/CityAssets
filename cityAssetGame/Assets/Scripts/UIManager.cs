@@ -182,8 +182,8 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
 	public void SoundChange(int temp)
 	{
-		MusicSource.clip = MusicClips [temp];
+		//MusicSource.clip = MusicClips [temp];
 
-		MusicSource.Play ();	
+		//MusicSource.Play ();	
 	}
 }

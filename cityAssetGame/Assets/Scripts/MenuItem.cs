@@ -17,6 +17,7 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     public UIManager uiManager;
     private citymanager cityManager;
+    private EnemyScript enemy;
 
     public int GenericCost = 1;
     public int AmmoGeneratorCost = 2;
@@ -26,6 +27,7 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     {
         uiManager = transform.parent.GetComponentInChildren<UIManager>();
         cityManager = GameObject.Find("CityManager").GetComponent<citymanager>();
+        enemy = GameObject.Find("Enemy").GetComponent<EnemyScript>();
     }
 
     void Update()
@@ -35,6 +37,9 @@ public class MenuItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     void AttackEnemy()
     {
+        var grid = GameObject.Find("Battle Grid").GetComponent<GridScript>();
+        enemy.ShootEnemy(grid.SelectedGrid);
+        cityManager.ammo--;
         Debug.Log("Attack");
     }
 
