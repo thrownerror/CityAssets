@@ -13,6 +13,9 @@ public enum MenuType
 
 public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+	public AudioSource MusicSource;
+
+	public AudioClip[] MusicClips;
 
     public GameObject storeImage;
     public GameObject houseImage;
@@ -38,11 +41,13 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     {
         gridInstance = GameObject.Find("Grid").GetComponent<GridScript>();
         cityManager = GameObject.Find("CityManager").GetComponent<citymanager>();
+
+
     }
 
     void Update()
     {
-
+		
     }
 
     GameObject GetSelectedGridItem()
@@ -138,12 +143,15 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
+		
+
         var selectedCell = GetSelectedGridItem();
         var type = MenuType.CREATE;
         var unit = selectedCell != null ? selectedCell.GetComponent<UnitScript>() : null;
         if (selectedCell != null && unit != null)
         {
             type = MenuType.UPGRADE;
+			SoundChange (1);
         }
 
         if(cityManager.gridSwitch)
@@ -171,4 +179,11 @@ public class UIManager : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
     {
         isMouseOver = false;
     }
+
+	public void SoundChange(int temp)
+	{
+		MusicSource.clip = MusicClips [temp];
+
+		MusicSource.Play ();	
+	}
 }

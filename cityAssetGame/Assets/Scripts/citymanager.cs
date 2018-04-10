@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class citymanager : MonoBehaviour
 {
+	public NormalAudioScript NASObject;
+
+	public LoopAudioScript LASObject;
 
     // Use this for initialization
     [SerializeField]
@@ -61,6 +64,20 @@ public class citymanager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		if ((NASObject == null) && (GetComponent<NormalAudioScript> () != null)) {
+			NASObject = GetComponent<NormalAudioScript> ();
+		} else 
+		{
+			Debug.LogWarning("Missing 'NormalAudioScript' component.");
+		}
+
+		if ((LASObject == null) && (GetComponent<LoopAudioScript> () != null)) {
+			LASObject = GetComponent<LoopAudioScript> ();
+		} else 
+		{
+			Debug.LogWarning("Missing 'NormalAudioScript' component.");
+		}
+
         color2.r = 0;
         color2.g = 0;
         color2.b = 0;
@@ -402,6 +419,8 @@ public class citymanager : MonoBehaviour
 
     public void changeturn()
     {
+		NASObject.SoundChange (5);
+		LASObject.SoundChange (0);
         if (!playerturn)
         {
             roundcount++;
@@ -524,6 +543,7 @@ public class citymanager : MonoBehaviour
             gridSwitch = false;
             cityGrid.SetActive(true);
             battleGrid.SetActive(false);
+			LASObject.SoundChange (0);
         }
         else
         {
@@ -531,6 +551,7 @@ public class citymanager : MonoBehaviour
             gridSwitch = true;
             battleGrid.SetActive(true);
             cityGrid.SetActive(false);
+			LASObject.SoundChange (1);
         }
     }
 
