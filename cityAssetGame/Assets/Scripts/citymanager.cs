@@ -34,7 +34,7 @@ public class citymanager : MonoBehaviour
     Text roundtext;
 
     public Text actionsLeftText;
-
+    public GameObject enemy;
     public int resource = 5;
     public GameObject cityGrid;
     public GameObject battleGrid;
@@ -423,6 +423,13 @@ public class citymanager : MonoBehaviour
             playerturn = false;
             l2r = false;
             meiwan = false;
+            //get where enemy is shooting
+            string targetedPlace = enemy.GetComponent<EnemyScript>().ShootPlayer();
+            //I believe this damages a set location if there is a unit there
+            if(units[targetedPlace].GetComponent<UnitScript>() != null)
+            {
+                units[targetedPlace].GetComponent<UnitScript>().OnDamage();
+            }
             time = 0;
         }
 
